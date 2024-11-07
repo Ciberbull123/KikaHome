@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/kika")
+
+</head>
+<body>
+
+    <header>
+        <div>
+            <a href="#">
+                <img id="logo" src="~/Content/img/Kika-rosado.png">
+            </a>
+
+        </div>
+        <div>
+            
+        </div>
+        
+    </header>
+
+    <div id="menu" class="hamburger-menu">
+        <div class="bar"></div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <div id="menuPantalla">
+        <div class="contenedor-img">
+            <a href="/"><img id="logoMenu" src="~/Content/img/Kika-rosado.png" alt="Logotipo de Kika Home"></a>
+        </div>
+
+        <ul id="listaMenu">
+            <li>Inicio</li>
+            <li>Muebles</li>
+            <li>Ropa</li>
+            <li>Mamá</li>
+            <li>Nosotros</li>
+        </ul>
+        <div class="redes">
+            <img src="~/Content/img/Facebook.png">
+            <img src="~/Content/img/Instragram.png">
+            <img src="~/Content/img/WhatsApp.png">
+            <img src="~/Content/img/WhatsApp.png">
+        </div>
+        <div class="espacio">
+
+        </div>
+
+
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/kika")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

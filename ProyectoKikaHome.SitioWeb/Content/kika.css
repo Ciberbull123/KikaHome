@@ -1,0 +1,421 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: white;
+    background: black;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-size: clamp(1rem, 4vw, 4rem);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5em;
+    margin-right: -0.5em;
+    color: hsl(0, 0%, 80%);
+    width: 90vw;
+    max-width: 1200px;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    width: 100%;
+    z-index: 3;
+    height: 7em;
+    font-family: sans-serif;
+    font-size: clamp(0.66rem, 2vw, 1rem);
+    letter-spacing: 0.5em;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    visibility: hidden;
+}
+
+    section .outer,
+    section .inner {
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    section .bg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+        section .bg h2 {
+            z-index: 2;
+        }
+
+        section .bg .clip-text {
+            overflow: hidden;
+        }
+
+.first .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/dormitorio_rosado.jpg");
+}
+
+.second .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/dormitorio.jpg");
+}
+
+.third .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/Banio-2.jpg");
+    background-position: bottom;
+}
+
+.fourth .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/Kika.jpg");
+}
+
+.fifth .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("https://images.unsplash.com/photo-1617141636403-f511e2d5dc17?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODAzMjc4Mw&ixlib=rb-1.2.1&q=75w=1920");
+    background-position: 50% 45%;
+}
+
+h2 * {
+    will-change: transform;
+}
+
+
+
+
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+    height: 80px;
+    padding: 30px;
+}
+
+#logo {
+    width: 80px;
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    height: 100%;
+    float: left;
+    line-height: 80px;
+    position: relative;
+    left: 40%;
+}
+
+li {
+    color: white;
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 35px;
+}
+
+
+#menu img {
+    width: 60px;
+}
+
+#menu {
+    position: absolute;
+    
+    line-height: 80px;
+    margin-top: 10px;
+    z-index: 100;
+    right: 5%;
+    top: 2%;
+}
+
+
+.hamburger-menu {
+    margin: auto;
+    width: 100px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+    width: 75px;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.bar {
+    position: relative;
+    transform: translateY(25px);
+    background: white;
+    transition: all 0ms 300ms;
+}
+
+    .bar.animate {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    .bar:before {
+        width: 85px;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 25px;
+        background: white;
+        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .bar:after {
+        width: 100px;
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 25px;
+        background: white;
+        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .bar.animate:after {
+        top: 0;
+        width: 100px;
+        transform: rotate(45deg);
+        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .bar.animate:before {
+        bottom: 0;
+        width: 100px;
+        transform: rotate(-45deg);
+        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+
+#menuPantalla {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: left 1s ease;
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenedor-img {
+    flex: 20%;
+}
+
+#logoMenu {
+    width: 120px;
+    height: 120px;
+    margin: 120px;
+}
+
+#listaMenu {
+    flex: 30%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    #listaMenu li {
+        display: block;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+
+        #listaMenu li:hover {
+            color: #F3BEC2;
+        }
+
+
+.redes {
+    flex: 30%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+    .redes img {
+        width: 60px;
+        height: 60px;
+        margin-left: 40px;
+        cursor: pointer;
+    }
+
+
+.texto-rosado {
+    color: #F3BEC2 !important;
+}
+
+
+/*.primeraSeccion
+{
+    display: flex;
+    flex-direction: column;
+}*/
+ 
+.ilustracion-sillon img
+{
+    width: 200px;
+}
+
+
+
+.btn {
+    padding: 10px 25px 10px 25px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+
+.btn-primario {
+    border: solid 1px #F3BEC2;
+    background-color: #ffc8cc1b;
+    color: #F3BEC2;
+    background-image: url(../img/derecha.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-right: 10px;
+    --bs-btn-hover-bg: #F3BEC2;
+    --bs-btn-hover-border-color: #F3BEC2;
+    --bs-btn-active-bg: #fff;
+}
+
+    .btn-primario:hover {
+        background-color: #F3BEC2;
+        border: #F3BEC2;
+        color: #fff;
+    }
+
+
+
+.marco-madera {
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+    background-color: #e0c097;
+    border: 20px solid transparent;
+    border-image: linear-gradient(45deg, #d2a679, #a67d4a, #d2a679) 1;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5),
+    5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.marco-madera-contenido {
+    background-color: #fff;
+    padding: 15px;
+    height: 90%;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.centrado{
+    text-align: center;
+}
+
+.productos-banio
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.tarjeta-inclinada {
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    transform: rotate(8deg);
+}
+
+.tarjeta
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tarjeta h3
+{
+    margin: 5px auto
+}
+
+.sets
+{
+    background-image: url(img/sets.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.jaboneras {
+    background-image: url(img/jaboneras.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.dispensador {
+    background-image: url(img/dispensador.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.papeleras {
+    background-image: url(img/papeleras.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+.tarjeta-tienda {
+    height: 300px;
+    width: 350px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+    .tarjeta-tienda button {
+        margin-top: 20px;
+    }
+
+
+
+.seccion-tiendas
+{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.7)
+}
